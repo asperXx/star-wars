@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item link :to="'/planets'">
+        <v-list-item link :to="'/planets/1'">
           <v-list-item-action>
             <v-icon>fa-globe</v-icon>
           </v-list-item-action>

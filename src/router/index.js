@@ -6,29 +6,22 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "/planets",
+    redirect: "/planets/1",
   },
   {
-    path: "/planets",
+    path: "/planets/:id",
     name: "Planets",
     component: () => import("@/views/Planets.vue"),
-    children: [
-      {
-        path: ":id",
-        component: () => import("@/components/PlanetPage.vue"),
-      },
-    ],
+  },
+  {
+    path: "/planets/:id",
+    name: "PlanetPage",
+    component: () => import("@/components/PlanetPage.vue")
   },
   {
     path: "/statistics",
     name: "Statistics",
     component: () => import("@/views/Statistics.vue"),
-    children: [
-      {
-        path: ":id",
-        component: () => import("@/components/PlanetPage.vue"),
-      },
-    ],
   },
 ];
 

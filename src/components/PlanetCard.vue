@@ -2,8 +2,10 @@
   <v-container>
     <v-card>
       <v-card-title>{{name}}</v-card-title>
-      <cld-image :publicId="'planets/' + num" width="250px"></cld-image>
-      <v-btn text :to="'/planets/' + num">Подробнее</v-btn>
+      <cld-image :publicId="'planets/' + (num + (currentPage - 1) * 10)" width="250px" >
+      
+      </cld-image>
+      <v-btn text :to="'/planets/' + (num + (currentPage - 1) * 10)">Подробнее</v-btn>
     </v-card>
   </v-container>
 </template>
@@ -24,36 +26,13 @@ export default {
       type: String,
       required: true,
     },
-    diametr: {
-      type: String,
-      required: true,
-    },
-    rotationP: {
-      type: String,
-      required: true,
-    },
-    orbitalP: {
-      type: String,
-      required: true,
-    },
-    climate: {
-      type: String,
-      required: true,
-    },
-    gravity: {
-      type: String,
-      required: true,
-    },
-    terrain: {
-      type: String,
-      required: true,
-    },
-    population: {
-      type: String,
-      required: true,
-    },
+    currentPage: {
+      type: Number,
+      required: true
+    }
   },
-  methods: {},
+  methods: {
+  },
 };
 </script>
 
