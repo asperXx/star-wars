@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn :to="'/planets/'">Назад</v-btn>
+    <v-btn :to="'/planets/1'">Назад</v-btn>
     <v-row  >
     <v-col>
 
@@ -18,7 +18,6 @@
           <v-card-text>Gravity: {{ planet.gravity }}</v-card-text>
           <v-card-text>Terrain: {{ planet.terrain }}</v-card-text>
           <v-card-text>Population: {{ planet.population}}</v-card-text>
-          {{PLANETS_PAGES}}
         </v-col>
       </v-row>
       

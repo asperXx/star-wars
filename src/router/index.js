@@ -14,7 +14,7 @@ const routes = [
     component: () => import("@/views/Planets.vue"),
   },
   {
-    path: "/planets/:id",
+    path: "/planets/:id/:id",
     name: "PlanetPage",
     component: () => import("@/components/PlanetPage.vue")
   },
@@ -22,6 +22,28 @@ const routes = [
     path: "/statistics",
     name: "Statistics",
     component: () => import("@/views/Statistics.vue"),
+    children: [
+      {
+        path: "films",
+        component: () => import("@/components/Films.vue"),
+      },
+      {
+        path: "Peoples",
+        component: () => import("@/components/Peoples.vue"),
+      },
+      {
+        path: "Species",
+        component: () => import("@/components/Species.vue"),
+      },
+      {
+        path: "Venicles",
+        component: () => import("@/components/Venicles.vue"),
+      },
+      {
+        path: "Starships",
+        component: () => import("@/components/Starships.vue"),
+      },
+    ]
   },
 ];
 

@@ -3,9 +3,8 @@
     <v-card>
       <v-card-title>{{name}}</v-card-title>
       <cld-image :publicId="'planets/' + (num + (currentPage - 1) * 10)" width="250px" >
-      
       </cld-image>
-      <v-btn text :to="'/planets/' + (num + (currentPage - 1) * 10)">Подробнее</v-btn>
+      <v-btn text :to="'/planets/'+ currentPage + '/' + num">Подробнее</v-btn>
     </v-card>
   </v-container>
 </template>
