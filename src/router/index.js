@@ -9,12 +9,12 @@ const routes = [
     redirect: "/planets/1",
   },
   {
-    path: "/planets/:id",
+    path: "/planets/:page",
     name: "Planets",
     component: () => import("@/views/Planets.vue"),
   },
   {
-    path: "/planets/:id/:id",
+    path: "/planets/:page/:id",
     name: "PlanetPage",
     component: () => import("@/components/PlanetPage.vue")
   },

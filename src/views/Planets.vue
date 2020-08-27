@@ -21,21 +21,21 @@ export default {
     PlanetCard,
   },
   data: () => ({
-    currentPage: 1
+    currentPage: null
   }),
   methods: {
     selectPage() {
-      this.$router.push("/planets/" + this.currentPage);
-      this.$store.dispatch("GET_PLANETS",this.currentPage);
+      this.$router.push("/planets/" + this.currentPage).catch(()=>{});
+      this.$store.dispatch("GET_PLANETS",this.$route.params.page);
       window.scrollTo(0, 0);
-      
     }
   },
   computed: {
     ...mapGetters(["PLANETS","PLANETS_PAGES"]),
   },
   created() {
-    this.$store.dispatch("GET_PLANETS",this.currentPage);
+    this.currentPage = +this.$route.params.page;
+    this.$store.dispatch("GET_PLANETS",this.$route.params.page);
     this.$store.dispatch("GET_PLANETS_PAGES");
   },
 };

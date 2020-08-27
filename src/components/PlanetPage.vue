@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn :to="'/planets/1'">Назад</v-btn>
+    <v-btn @click="$router.go(-1)">Назад</v-btn>
     <v-row  >
     <v-col>
 
@@ -8,7 +8,9 @@
       <v-card-title>{{planet.name}}</v-card-title>
       <v-row>
         <v-col>
-          <cld-image :publicId="'planets/' + img" width="400px"/>
+          <cld-image :publicId="'planets/' + img" width="400px">
+            <cld-transformation defaultImage="sample.jpg" />
+          </cld-image>
         </v-col>
         <v-col>
           <v-card-text>Rotation period: {{planet.rotation_period}}</v-card-text>
@@ -46,10 +48,9 @@ export default {
   methods: {
   },
   created() {
-  this.$store.dispatch("GET_PLANETS");
+  this.$store.dispatch("GET_PLANETS",this.$route.params.page);
   
-    this.img = this.$route.params.id;
-    this.pageCount(this.idx)
+  this.img = (this.$route.params.page - 1) * 10 + this.$route.params.id; 
   }
 }
 </script>
