@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       tab: null,
-      roots: ["films", "peoples", "species", "starships", "venicles"]
+      roots: ["films", "peoples", "species", "starships", "vehicles"]
     };
   }
 };

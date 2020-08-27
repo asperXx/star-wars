@@ -1,24 +1,30 @@
-import axios from "axios"
+import axios from "axios";
 
 const state = {
-    venicles: []
+  vehicles: [],
+  vehiclesPages: null,
 };
 const getters = {
-    VENICLES: state => {
-        return state.venicles;
-      },
+  VEHICLES: (s) => s.vehicles,
+  VEHICLES_PAGES: (s) => s.vehiclesPages,
 };
 const mutations = {
-    SET_VENICLES: (state, payload) => {
-        state.venicles = payload;
-      },
-    
+  SET_VEHICLES: (state, payload) => {
+    state.vehicles = payload;
+  },
+  SET_VEHICLES_PAGES: (state, payload) => {
+    state.vehiclesPages = Math.ceil(+payload / 10);
+  },
 };
 const actions = {
-    GET_VENICLES: async (context) => {
-        let {data} = await axios.get('https://swapi.dev/api/venicles/');
-        context.commit('SET_VENICLES', data.results);
-      },
+  GET_VEHICLES: async (context, id) => {
+    let { data } = await axios.get("https://swapi.dev/api/vehicles/?page=" + id);
+    context.commit("SET_VEHICLES", data.results);
+  },
+  GET_VEHICLES_PAGES: async (context) => {
+    let { data } = await axios.get("https://swapi.dev/api/vehicles/");
+    context.commit("SET_VEHICLES_PAGES", data.count);
+  },
 };
 
 export default {

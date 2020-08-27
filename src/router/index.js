@@ -37,8 +37,8 @@ const routes = [
         component: () => import("@/components/Species.vue"),
       },
       {
-        path: "venicles/:page",
-        component: () => import("@/components/Venicles.vue"),
+        path: "vehicles/:page",
+        component: () => import("@/components/Vehicles.vue"),
       },
       {
         path: "starships/:page",

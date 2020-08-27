@@ -34,7 +34,6 @@
       </v-expansion-panels>
     </v-row>
     <v-pagination
-      v-if="currentPage != STARSHIPS_PAGES"
       v-model="currentPage"
       :length="STARSHIPS_PAGES"
       @input="selectPage()"
