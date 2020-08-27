@@ -12,7 +12,7 @@
       <cld-transformation defaultImage="unknown_img.png" />
       </cld-image>
       <v-card-title class="mt-n16">{{ name }}</v-card-title>
-      <v-btn text :to="'/planets/' + currentPage + '/' + num">More info</v-btn>
+      <v-btn text :to="'/planets/' + currentPage + '/' + num" class="ml-2 mb-2">More info</v-btn>
     </v-card>
   </v-container>
 </template>

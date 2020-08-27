@@ -7,12 +7,12 @@
     <v-card max-width="900px">
       <v-card-title>{{planet.name}}</v-card-title>
       <v-row>
-        <v-col>
+        <v-col xs="12" sm="6" md="6" class="ml-4">
           <cld-image :publicId="'planets/' + img" width="400px">
             <cld-transformation defaultImage="unknown_img.png" />
           </cld-image>
         </v-col>
-        <v-col>
+        <v-col xs="12" sm="6" md="5">
           <v-card-text>Rotation period: {{planet.rotation_period}}</v-card-text>
           <v-card-text>Orbital period: {{ planet.orbital_period }}</v-card-text>
           <v-card-text>Diametr: {{ planet.diameter }}</v-card-text>

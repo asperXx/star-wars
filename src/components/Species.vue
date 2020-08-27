@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-pagination v-model="currentPage" :length="SPECIES_PAGES" @input="selectPage()"></v-pagination>
+    <v-pagination v-model="currentPage" :length="SPECIES_PAGES" @input="selectPage(); overlay = !overlay;"></v-pagination>
     <v-row justify="center">
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="(item,i) in SPECIES" :key="i">
@@ -33,8 +33,11 @@
     <v-pagination
       v-model="currentPage"
       :length="SPECIES_PAGES"
-      @input="selectPage()"
+      @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
+    <v-overlay color="black" :value="overlay">
+      <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+    </v-overlay>
   </v-container>
 </template>
 
@@ -43,11 +46,20 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      currentPage: null
+      currentPage: null,
+      overlay: false
     };
   },
   computed: {
     ...mapGetters(["SPECIES", "SPECIES_PAGES"])
+  },
+  watch: {
+    overlay(val) {
+      val &&
+        setTimeout(() => {
+          this.overlay = false;
+        }, 1000);
+    },
   },
   methods: {
     selectPage() {
