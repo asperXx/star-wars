@@ -1,5 +1,11 @@
 <template>
   <v-container fluid>
+     <v-pagination
+      v-model="currentPage"
+      :length="PLANETS_PAGES"
+      @input="selectPage(); overlay = !overlay;"
+      
+    ></v-pagination>
     <v-row>
       <v-col xl="3" lg="4" md="6" sm="12" v-for="(n,index) in PLANETS" :key="index">
         <PlanetCard :currentPage="currentPage" :num="index+1" :name="n.name" />
@@ -8,8 +14,11 @@
      <v-pagination
       v-model="currentPage"
       :length="PLANETS_PAGES"
-      @input="selectPage"
+      @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
+    <v-overlay color="black" :value="overlay">
+        <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+      </v-overlay>
   </v-container>
 </template>
 
@@ -21,8 +30,17 @@ export default {
     PlanetCard,
   },
   data: () => ({
-    currentPage: null
+    currentPage: null,
+    overlay: false
   }),
+  watch: {
+    overlay(val) {
+      val &&
+        setTimeout(() => {
+          this.overlay = false;
+        }, 1000);
+    },
+  },
   methods: {
     selectPage() {
       this.$router.push("/planets/" + this.currentPage).catch(()=>{});

@@ -24,23 +24,23 @@ const routes = [
     component: () => import("@/views/Statistics.vue"),
     children: [
       {
-        path: "films",
+        path: "films/:page",
         component: () => import("@/components/Films.vue"),
       },
       {
-        path: "Peoples",
+        path: "peoples/:page",
         component: () => import("@/components/Peoples.vue"),
       },
       {
-        path: "Species",
+        path: "species/:page",
         component: () => import("@/components/Species.vue"),
       },
       {
-        path: "Venicles",
+        path: "venicles/:page",
         component: () => import("@/components/Venicles.vue"),
       },
       {
-        path: "Starships",
+        path: "starships/:page",
         component: () => import("@/components/Starships.vue"),
       },
     ]

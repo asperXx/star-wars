@@ -1,21 +1,23 @@
 <template>
   <v-container>
-    <v-card v-for="(root,index) in roots" :key="index">
-      <v-card-title>{{root}}</v-card-title>
-    </v-card>
+    <v-tabs v-model="tab" fixed-tabs dark show-arrows color="white">
+      <v-tabs-slider color="white"></v-tabs-slider>
+      <v-tab :to="'/statistics/' + root + '/1'" v-for="(root,index) in roots" :key="index">{{ root }}</v-tab>
+    </v-tabs>
+    <router-view />
   </v-container>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      roots : ['films', 'people', 'planets', 'species', 'starships', 'venicles']
-    }
+      tab: null,
+      roots: ["films", "peoples", "species", "starships", "venicles"]
+    };
   }
-}
+};
 </script>
 
 <style>
-
 </style>
