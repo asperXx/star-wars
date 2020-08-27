@@ -21,6 +21,7 @@ const routes = [
   {
     path: "/statistics",
     name: "Statistics",
+    redirect: "/statistics/films/1",
     component: () => import("@/views/Statistics.vue"),
     children: [
       {

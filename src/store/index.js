@@ -5,7 +5,8 @@ import peoples from "./modules/peoples";
 import venicles from "./modules/venicles";
 import species from "./modules/species";
 import starships from "./modules/starships";
-// import axios from 'axios'
+import films from "./modules/films";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     peoples,
     venicles,
     species,
-    starships
+    starships,
+    films
   }
 });
