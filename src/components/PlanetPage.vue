@@ -9,7 +9,7 @@
       <v-row>
         <v-col>
           <cld-image :publicId="'planets/' + img" width="400px">
-            <cld-transformation defaultImage="unknown_img.jpg" />
+            <cld-transformation defaultImage="unknown_img.png" />
           </cld-image>
         </v-col>
         <v-col>

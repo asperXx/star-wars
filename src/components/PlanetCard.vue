@@ -1,15 +1,18 @@
 <template>
   <v-container>
-    <v-card>
-      <v-card-subtitle>{{ name }}</v-card-subtitle>
-
+    <v-card 
+    class="mx-auto"
+    width="320">
+    
       <cld-image
         :publicId="'planets/' + (num + (this.$route.params.page - 1) * 10)"
-        width="250px"
+        width="320px"
+        height="320px"
       >
-      <cld-transformation defaultImage="unknown_img.jpg" />
+      <cld-transformation defaultImage="unknown_img.png" />
       </cld-image>
-      <v-btn text :to="'/planets/' + currentPage + '/' + num">Подробнее</v-btn>
+      <v-card-title class="mt-n16">{{ name }}</v-card-title>
+      <v-btn text :to="'/planets/' + currentPage + '/' + num">More info</v-btn>
     </v-card>
   </v-container>
 </template>

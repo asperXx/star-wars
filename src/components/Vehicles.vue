@@ -12,7 +12,7 @@
                   :publicId="'vehicles/' + ((i + 1) + (+$route.params.page - 1) * 10)"
                   width="250px"
                 >
-                  <cld-transformation defaultImage="unknown_img.jpg" />
+                  <cld-transformation defaultImage="unknown_img.png" />
                 </cld-image>
               </v-col>
               <v-col xs="12" sm="6" md="8">
