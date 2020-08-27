@@ -5,8 +5,7 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 import '../cloudinary.js'
 
-Vue.config.productionTip = false
-
+Vue.config.devtools = true
 new Vue({
   router,
   store,
