@@ -1,24 +1,30 @@
-import axios from "axios"
+import axios from "axios";
 
 const state = {
-    starships: []
+  starships: [],
+  starshipsPages: null,
 };
 const getters = {
-    STARSHIPS: state => {
-        return state.starships;
-      },
+  STARSHIPS: (s) => s.starships,
+  STARSHIPS_PAGES: (s) => s.starshipsPages,
 };
 const mutations = {
-    SET_STARSHIPS: (state, payload) => {
-        state.starships = payload;
-      },
-    
+  SET_STARSHIPS: (state, payload) => {
+    state.starships = payload;
+  },
+  SET_STARSHIPS_PAGES: (state, payload) => {
+    state.starshipsPages = Math.ceil(+payload / 10);
+  },
 };
 const actions = {
-    GET_STARSHIPS: async (context) => {
-        let {data} = await axios.get('https://swapi.dev/api/starships/');
-        context.commit('SET_STARSHIPS', data.results);
-      },
+  GET_STARSHIPS: async (context, id) => {
+    let { data } = await axios.get("https://swapi.dev/api/starships/?page=" + id);
+    context.commit("SET_STARSHIPS", data.results);
+  },
+  GET_STARSHIPS_PAGES: async (context) => {
+    let { data } = await axios.get("https://swapi.dev/api/starships/");
+    context.commit("SET_STARSHIPS_PAGES", data.count);
+  },
 };
 
 export default {

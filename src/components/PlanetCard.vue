@@ -7,7 +7,7 @@
         :publicId="'planets/' + (num + (this.$route.params.page - 1) * 10)"
         width="250px"
       >
-      <cld-transformation defaultImage="sample.png" />
+      <cld-transformation defaultImage="unknown_img" />
       </cld-image>
       <v-btn text :to="'/planets/' + currentPage + '/' + num">Подробнее</v-btn>
     </v-card>
