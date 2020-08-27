@@ -5,10 +5,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    redirect: "/planets/1",
-  },
-  {
     path: "/planets/:page",
     name: "Planets",
     component: () => import("@/views/Planets.vue"),

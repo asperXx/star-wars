@@ -49,7 +49,6 @@ export default {
   },
   created() {
   this.$store.dispatch("GET_PLANETS",this.$route.params.page);
-  
   this.img = (+this.$route.params.page - 1) * 10 + +this.$route.params.id; 
   }
 }
