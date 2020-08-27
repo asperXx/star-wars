@@ -4,12 +4,12 @@
     <v-row justify="center">
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="(item,i) in PEOPLES" :key="i">
-          <v-expansion-panel-header>{{item.name}}</v-expansion-panel-header>
+          <v-expansion-panel-header>{{item.name}} {{ i }}</v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-row align="center" justify="center">
               <v-col xs="12" sm="6" md="4">
                 <cld-image
-                  :publicId="'people/' + ((i + 1) + (+$route.params.page - 1) * 10)"
+                  :publicId="'ludi/' + ((i + 1) + ($route.params.page - 1) * 10)"
                   width="250px"
                 >
                   <cld-transformation defaultImage="unknown_img.jpg" />
