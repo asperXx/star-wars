@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn @click="$router.go(-1)">Назад</v-btn>
+    <v-btn @click="$router.go(-1)">Back</v-btn>
     <v-row  >
     <v-col>
 

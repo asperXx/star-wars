@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       tab: null,
-      roots: ["films", "peoples", "species", "starships", "vehicles"],
+      roots: ["films", "characters", "species", "starships", "vehicles"],
       overlay: false
     };
   },
