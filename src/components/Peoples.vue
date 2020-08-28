@@ -77,7 +77,7 @@ export default {
   methods: {
     selectPage() {
       this.$router
-        .push("/statistics/peoples/" + this.currentPage)
+        .push("/statistics/characters/" + this.currentPage)
         .catch(() => {});
       this.$store.dispatch("GET_PEOPLES", this.$route.params.page);
       window.scrollTo(0, 0);
