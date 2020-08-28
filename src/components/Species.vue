@@ -1,6 +1,10 @@
 <template>
   <v-container fluid>
-    <v-pagination v-model="currentPage" :length="SPECIES_PAGES" @input="selectPage(); overlay = !overlay;"></v-pagination>
+    <v-pagination
+      v-model="currentPage"
+      :length="SPECIES_PAGES"
+      @input="selectPage(); overlay = !overlay;"
+    ></v-pagination>
     <v-row justify="center">
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="(item,i) in SPECIES" :key="i">
@@ -16,14 +20,20 @@
                 </cld-image>
               </v-col>
               <v-col xs="12" sm="6" md="8">
-                  Average height : {{ item.average_height }} <br />
-                  Average lifespan : {{ item.average_lifespan }} <br />
-                  Classification : {{ item.classification }} <br />
-                  Designation : {{ item.designation }} <br />
-                  Eye colors : {{ item.eye_colors }} <br />
-                  Hair colors : {{ item.hair_colors }} <br />
-                  Language : {{ item.language }} <br />
-
+                Average height : {{ item.average_height }}
+                <br />
+                Average lifespan : {{ item.average_lifespan }}
+                <br />
+                Classification : {{ item.classification }}
+                <br />
+                Designation : {{ item.designation }}
+                <br />
+                Eye colors : {{ item.eye_colors }}
+                <br />
+                Hair colors : {{ item.hair_colors }}
+                <br />
+                Language : {{ item.language }}
+                <br />
               </v-col>
             </v-row>
           </v-expansion-panel-content>
@@ -36,7 +46,9 @@
       @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
     <v-overlay color="black" :value="overlay">
-      <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+      <v-progress-circular indeterminate width="7" size="128">
+        <div class="obi-wan"></div>
+      </v-progress-circular>
     </v-overlay>
   </v-container>
 </template>
@@ -59,7 +71,7 @@ export default {
         setTimeout(() => {
           this.overlay = false;
         }, 1000);
-    },
+    }
   },
   methods: {
     selectPage() {

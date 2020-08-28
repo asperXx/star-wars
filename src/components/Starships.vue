@@ -1,6 +1,10 @@
 <template>
   <v-container fluid>
-    <v-pagination v-model="currentPage" :length="STARSHIPS_PAGES" @input="selectPage(); overlay = !overlay;"></v-pagination>
+    <v-pagination
+      v-model="currentPage"
+      :length="STARSHIPS_PAGES"
+      @input="selectPage(); overlay = !overlay;"
+    ></v-pagination>
     <v-row justify="center">
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="(item,i) in STARSHIPS" :key="i">
@@ -16,17 +20,28 @@
                 </cld-image>
               </v-col>
               <v-col xs="12" sm="6" md="8">
-                 MGLT : {{ item.MGLT }} <br />
-                 Cargo capacity : {{ item.cargo_capacity }} <br />
-                 Consumables : {{ item.consumables }} <br />
-                 Cost in credits : {{ item.cost_in_credits }} <br />
-                 Crew : {{ item.crew }} <br />
-                 Hyperdrive rating : {{ item.hyperdrive_rating }} <br />
-                 Length : {{ item.length }} <br />
-                 Manufacturer : {{ item.manufacturer }} <br />
-                 Max atmosphering speed : {{ item.max_atmosphering_speed }} <br />
-                 Model : {{ item.model }} <br />
-                 Passenger : {{ item.passengers }} <br />
+                MGLT : {{ item.MGLT }}
+                <br />
+                Cargo capacity : {{ item.cargo_capacity }}
+                <br />
+                Consumables : {{ item.consumables }}
+                <br />
+                Cost in credits : {{ item.cost_in_credits }}
+                <br />
+                Crew : {{ item.crew }}
+                <br />
+                Hyperdrive rating : {{ item.hyperdrive_rating }}
+                <br />
+                Length : {{ item.length }}
+                <br />
+                Manufacturer : {{ item.manufacturer }}
+                <br />
+                Max atmosphering speed : {{ item.max_atmosphering_speed }}
+                <br />
+                Model : {{ item.model }}
+                <br />
+                Passenger : {{ item.passengers }}
+                <br />
               </v-col>
             </v-row>
           </v-expansion-panel-content>
@@ -39,7 +54,9 @@
       @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
     <v-overlay color="black" :value="overlay">
-      <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+      <v-progress-circular indeterminate width="7" size="128">
+        <div class="obi-wan"></div>
+      </v-progress-circular>
     </v-overlay>
   </v-container>
 </template>
@@ -62,7 +79,7 @@ export default {
         setTimeout(() => {
           this.overlay = false;
         }, 1000);
-    },
+    }
   },
   methods: {
     selectPage() {

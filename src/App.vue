@@ -23,8 +23,10 @@
 
     <v-app-bar app clipped-left>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>
+      <v-toolbar-title> 
+        <router-link to="/planets/1" tag="span" exact :style="{ cursor: 'pointer'}">
         <v-icon left>fa-rocket</v-icon>STAR WARS
+        </router-link>
       </v-toolbar-title>
     </v-app-bar>
 
@@ -51,3 +53,16 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.obi-wan {
+    background: url("./assets/uf.png") no-repeat;
+    width: 63px;
+    height: 80px;
+    animation: walk 0.7s steps(12) infinite;
+  }
+  
+  @keyframes walk {
+    100% { background-position: -862px 0; }
+  }
+</style>

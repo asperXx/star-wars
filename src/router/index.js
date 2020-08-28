@@ -29,7 +29,7 @@ const routes = [
         component: () => import("@/components/Films.vue"),
       },
       {
-        path: "peoples/:page",
+        path: "characters/:page",
         component: () => import("@/components/Peoples.vue"),
       },
       {

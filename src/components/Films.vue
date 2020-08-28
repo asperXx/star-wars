@@ -6,10 +6,10 @@
           <v-expansion-panel-header>{{item.title}}</v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-row justify="center">
-              <v-col  xs="12" sm="6" md="4">
+              <v-col xs="12" sm="6" md="4">
                 <cld-image :publicId="'films/' + item.episode_id" width="250px" />
               </v-col>
-              <v-col  xs="12" sm="6" md="8">
+              <v-col xs="12" sm="6" md="8">
                 Episode id : {{ item.episode_id }}
                 <br />
                 <hr />

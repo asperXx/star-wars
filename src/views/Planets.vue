@@ -5,18 +5,20 @@
       :length="PLANETS_PAGES"
       @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
+    
     <v-row>
-      <v-col xl="3" lg="4" md="6" sm="12" v-for="(n,index) in PLANETS" :key="index">
+      <v-col xl="3" lg="4" md="6" sm="12" xs="12" v-for="(n,index) in PLANETS" :key="index">
         <PlanetCard :currentPage="currentPage" :num="index+1" :name="n.name" />
       </v-col>
     </v-row>
+    
     <v-pagination
       v-model="currentPage"
       :length="PLANETS_PAGES"
       @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
     <v-overlay color="black" :value="overlay">
-      <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+      <v-progress-circular indeterminate width="7" size="128"> <div class="obi-wan"> </div> </v-progress-circular>
     </v-overlay>
   </v-container>
 </template>
@@ -57,3 +59,6 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+</style>

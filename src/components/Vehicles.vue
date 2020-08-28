@@ -1,6 +1,10 @@
 <template>
   <v-container fluid>
-    <v-pagination v-model="currentPage" :length="VEHICLES_PAGES" @input="selectPage(); overlay = !overlay;"></v-pagination>
+    <v-pagination
+      v-model="currentPage"
+      :length="VEHICLES_PAGES"
+      @input="selectPage(); overlay = !overlay;"
+    ></v-pagination>
     <v-row justify="center">
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="(item,i) in VEHICLES" :key="i">
@@ -46,7 +50,9 @@
       @input="selectPage(); overlay = !overlay;"
     ></v-pagination>
     <v-overlay color="black" :value="overlay">
-      <v-progress-circular indeterminate width="7" size="128"></v-progress-circular>
+      <v-progress-circular indeterminate width="7" size="128">
+        <div class="obi-wan"></div>
+      </v-progress-circular>
     </v-overlay>
   </v-container>
 </template>
@@ -69,7 +75,7 @@ export default {
         setTimeout(() => {
           this.overlay = false;
         }, 1000);
-    },
+    }
   },
   methods: {
     selectPage() {
