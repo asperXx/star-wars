@@ -3,10 +3,12 @@ import axios from "axios";
 const state = {
   species: [],
   speciesPages: null,
+  speciesCount: null
 };
 const getters = {
   SPECIES: (s) => s.species,
   SPECIES_PAGES: (s) => s.speciesPages,
+  SPECIES_COUNT: (s) => s.speciesCount,
 };
 const mutations = {
   SET_SPECIES: (state, payload) => {
@@ -14,6 +16,7 @@ const mutations = {
   },
   SET_SPECIES_PAGES: (state, payload) => {
     state.speciesPages = Math.ceil(+payload / 10);
+    state.speciesCount = payload;
   },
 };
 const actions = {

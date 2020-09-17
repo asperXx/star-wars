@@ -3,11 +3,13 @@ import axios from "axios";
 const state = {
   planets: [],
   planetsPages: null,
+  planetsCount: null
 };
 const getters = {
   PLANETS: (s) => s.planets,
   PLANET_BY_ID: (s) => (id) => s.planets[id - 1],
   PLANETS_PAGES: (s) => s.planetsPages,
+  PLANETS_COUNT: (s) => s.planetsCount,
 };
 const mutations = {
   SET_PLANETS: (state, payload) => {
@@ -15,6 +17,7 @@ const mutations = {
   },
   SET_PLANETS_PAGES: (state, payload) => {
     state.planetsPages = Math.ceil(+payload / 10);
+    state.planetsCount = payload;
   },
 };
 const actions = {

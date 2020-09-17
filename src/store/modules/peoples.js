@@ -3,10 +3,12 @@ import axios from "axios";
 const state = {
   peoples: [],
   peoplesPages: null,
+  peoplesCount: null
 };
 const getters = {
   PEOPLES: (s) => s.peoples,
   PEOPLES_PAGES: (s) => s.peoplesPages,
+  PEOPLES_COUNT: (s) => s.peoplesCount,
 };
 const mutations = {
   SET_PEOPLES: (state, payload) => {
@@ -14,6 +16,7 @@ const mutations = {
   },
   SET_PEOPLES_PAGES: (state, payload) => {
     state.peoplesPages = Math.ceil(+payload / 10);
+    state.peoplesCount = payload;
   },
 };
 const actions = {

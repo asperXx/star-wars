@@ -3,10 +3,12 @@ import axios from "axios";
 const state = {
   vehicles: [],
   vehiclesPages: null,
+  vehiclesCount: null
 };
 const getters = {
   VEHICLES: (s) => s.vehicles,
   VEHICLES_PAGES: (s) => s.vehiclesPages,
+  VEHICLES_COUNT: (s) => s.vehiclesCount,
 };
 const mutations = {
   SET_VEHICLES: (state, payload) => {
@@ -14,6 +16,7 @@ const mutations = {
   },
   SET_VEHICLES_PAGES: (state, payload) => {
     state.vehiclesPages = Math.ceil(+payload / 10);
+    state.vehiclesCount = payload;
   },
 };
 const actions = {
